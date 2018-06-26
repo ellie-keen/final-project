@@ -1,15 +1,14 @@
-
 window.onload = function() {
-  var buttons = document.querySelector('.button');
-  initializeButtons = function() {
-    for(var i = 0; i < buttons.length; i++) {
-      console.log(buttons)
 
+  var buttons = document.querySelectorAll('.button');
+
+  var initializeButtons = function() {
+    for(let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", function() {
         this.style.backgroundColor = 'red'
-        console.log(this.style.backgroundColor)
       })
     }
   }
-  initializeButtons()
-};
+    initializeButtons()
+
+  };
