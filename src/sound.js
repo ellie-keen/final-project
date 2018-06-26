@@ -2,10 +2,10 @@
 function Sound() {
 
 }
+var audioFile = document.getElementById('audio');
 
-Sound.prototype.playSound = function(audio) {
-  document.getElementById('audio').play();
-  // audioFile.play();
+Sound.prototype.playSound = function(audioFile) {
+  audioFile.play();
 }
 
 var sound = new Sound();

@@ -1,20 +1,17 @@
 describe("Sound", function() {
 
   var sound;
+  var audioFile;
 
   beforeEach(function() {
     sound = new Sound();
+    audioFile = jasmine.createSpyObj('audioFile', ['play'])
   });
 
   describe("playSound", function(){
 
     it("calls play", function(){
-      // var audio = jasmine.createSpyObj('audio');
-
-      var audioFile = jasmine.createSpyObj('audioFile', ['play'])
-
       sound.playSound(audioFile)
-
       expect(audioFile.play).toHaveBeenCalled();
     })
   })
