@@ -9,6 +9,5 @@ window.onload = function() {
       })
     }
   }
-    initializeButtons()
-
-  };
+  initializeButtons()
+};
