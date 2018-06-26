@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="src/button.js"></script>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
+    <h1>hello</h1>
+   
     <audio id="audio" src="./sounds/airplane.wav" autostart="false"></audio>
-
+   
     <button onclick="sound.playSound();" type="button" name="button" id="1">Play</button>
-    <button type="button" name="button" id="2"></button>
-    <button type="button" name="button" id="3"></button>
-    <button type="button" name="button" id="4"></button>
-    <button type="button" name="button" id="5"></button>
 
-    <script type="text/javascript" src="./src/sound.js">
+    <div id='button1' class='button'></div>
+    <div id='button2' class='button'></div>
+    <div id='button3' class='button'></div>
 
-    </script>
+   <script type="text/javascript" src="./src/sound.js">    </script>
   </body>
 </html>
