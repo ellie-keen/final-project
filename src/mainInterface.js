@@ -14,5 +14,5 @@ window.onload = function() {
     }
   };
   initializeButtons();
-  buttonGrid.create(10, 0, 0);
+  buttonGrid.createGrid(5, 5, 0, 0);
 };
