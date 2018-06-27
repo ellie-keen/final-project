@@ -3,7 +3,7 @@ describe("Bloop", function(){
   beforeEach(function() {
     var audio = new AudioContext();
   })
-  
+
   describe("createSineWave", function(){
     it("should return an oscillator object", function(){
       expect(createSineWave(audio, 2)).toEqual(jasmine.any(OscillatorNode))
@@ -15,6 +15,14 @@ describe("Bloop", function(){
       expect(createSineWave(audio, 2).type).toEqual("sine")
     });
   });
+
+  describe("note", function(){
+    it("should return a function", function(){
+      expect(note(audio, 400)).toEqual(jasmine.any(Function))
+    });
+  });
+
+  
 
 
 });
