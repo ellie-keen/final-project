@@ -29,5 +29,12 @@ GridView.prototype.update = function(buttonGrid, x, y) {
 };
 
 GridView.prototype.clickIsWithinButton = function(x, y) {
-  return x < 20 && y < 20;
+  return !(x > 20 && x < 30 ||
+          x > 50 && x < 60 ||
+          x > 80 && x < 90 ||
+          x > 110 && x < 120 ||
+          y > 20 && y < 30 ||
+          y > 50 && y < 60 ||
+          y > 80 && y < 90 ||
+          y > 110 && y < 120)
 };
