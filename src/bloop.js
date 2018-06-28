@@ -8,6 +8,23 @@ function createSineWave(audio, duration) {
   return oscillator
 };
 
+function createWave(audio, duration, wave) {
+  var oscillator = audio.createOscillator();
+  oscillator.type = wave;
+  oscillator.start(audio.currentTime);
+  oscillator.stop(audio.currentTime + duration);
+  return oscillator
+};
+
+function alternativeNote(audio, frequency, wave) {
+  return function() {
+    var duration = 1;
+    var alternativeWave = createWave(audio, duration, wave);
+    alternativeWave.frequency.value = frequency;
+    chain([alternativeWave, createAmplifier(audio, 0.2, duration), audio.destination]);
+  };
+};
+
 function note(audio, frequency) {
   return function() {
     var duration = 1;
@@ -34,11 +51,11 @@ function chain(sounds) {
   }
 };
 
-function wavey(audio, frequency) {
-  note(audio, frequency)()
-  note(audio, frequency)()
-  note(audio, frequency - 5)()
-  note(audio, frequency - 3)()
+function play_sound(audio, frequency, wave) {
+  alternativeNote(audio, frequency, wave)()
+  alternativeNote(audio, frequency, wave)()
+  alternativeNote(audio, frequency - 5, wave)()
+  alternativeNote(audio, frequency - 3, wave)()
 }
 
-wavey(audio, 440)
+play_sound(audio, 440, "sawtooth")
