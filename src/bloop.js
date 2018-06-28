@@ -1,4 +1,8 @@
-var audio = new AudioContext();
+try {
+    var audio = new AudioContext();
+} catch(e) {
+    throw new Error('The Web Audio API is unavailable');
+}
 
 function createWave(audio, duration, waveType) {
   var oscillator = audio.createOscillator();
