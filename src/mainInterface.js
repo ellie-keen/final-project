@@ -1,6 +1,7 @@
 window.onload = function() {
   var canvas = document.getElementById('screen');
-  var buttonGrid = new ButtonGrid(canvas.getContext('2d'));
+  var buttonGrid = new ButtonGrid(5, 5);
+  var gridView = new GridView();
   var audioFile = document.getElementById('audio');
   var buttons = document.querySelectorAll('.button');
   var sound = new Sound();
@@ -14,5 +15,6 @@ window.onload = function() {
     }
   };
   initializeButtons();
-  buttonGrid.createGrid(5, 5, 0, 0);
+  buttonGrid.init();
+  gridView.drawGrid(canvas.getContext('2d'), buttonGrid);
 };
