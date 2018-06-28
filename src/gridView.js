@@ -33,8 +33,10 @@ GridView.prototype.clickIsWithinButton = function(x, y) {
           x > 50 && x < 60 ||
           x > 80 && x < 90 ||
           x > 110 && x < 120 ||
+          x > 140 ||
           y > 20 && y < 30 ||
           y > 50 && y < 60 ||
           y > 80 && y < 90 ||
-          y > 110 && y < 120)
+          y > 110 && y < 120 ||
+          y > 140)
 };
