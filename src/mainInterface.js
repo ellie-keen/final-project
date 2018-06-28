@@ -8,7 +8,7 @@ window.onload = function() {
 
   buttonGrid.init();
   canvas.addEventListener('click', function(e) {
-    gridView.update(buttonGrid, e.clientX, e.clientY);
+    gridView.update(buttonGrid, e.offsetX, e.offsetY);
     gridView.drawGrid(buttonGrid);
   });
   gridView.drawGrid(buttonGrid);
