@@ -5,13 +5,13 @@ function GridView(context) {
 }
 
 GridView.prototype.drawGrid = function(buttonGrid) {
-  for (let i = 0; i < buttonGrid.cols; i++) {
-    for (let j = 0; j < buttonGrid.rows; j++) {
-      let button = buttonGrid.buttons[i][j];
+  for (let col = 0; col < buttonGrid.cols; col++) {
+    for (let row = 0; row < buttonGrid.rows; row++) {
+      let button = buttonGrid.buttons[row][col];
       this.context.fillStyle = button.color;
       this.context.fillRect(
-        i * this.buttonSize * this.gap,
-        j * this.buttonSize * this.gap,
+        col * this.buttonSize * this.gap,
+        row * this.buttonSize * this.gap,
         this.buttonSize,
         this.buttonSize
       );
@@ -21,8 +21,8 @@ GridView.prototype.drawGrid = function(buttonGrid) {
 
 GridView.prototype.update = function(buttonGrid, x, y) {
   if (this.clickIsWithinButton(x, y)) {
-    var row = Math.floor(x / this.buttonSize / this.gap);
-    var col = Math.floor(y / this.buttonSize / this.gap);
+    var row = Math.floor(y / this.buttonSize / this.gap);
+    var col = Math.floor(x / this.buttonSize / this.gap);
     var button = buttonGrid.buttons[row][col];
     button.color = 'red';
   }

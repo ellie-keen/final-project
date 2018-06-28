@@ -5,9 +5,9 @@ function ButtonGrid(rows, cols) {
 }
 
 ButtonGrid.prototype.init = function() {
-  for (let i = 0; i < this.rows; i++) {
+  for (let row = 0; row < this.rows; row++) {
     var buttonRow = [];
-    for (let j = 0; j < this.cols; j++) {
+    for (let col = 0; col < this.cols; col++) {
       buttonRow.push(new Button('blue'));
     }
     this.buttons.push(buttonRow);

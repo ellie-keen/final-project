@@ -13,8 +13,8 @@ describe('GridView', function() {
   it('changes the color of a selected button', function() {
     let buttonGrid = new ButtonGrid(5, 5);
     buttonGrid.init();
-    expect(buttonGrid.buttons[2][0].color).toEqual('blue');
+    expect(buttonGrid.buttons[0][2].color).toEqual('blue');
     gridView.update(buttonGrid, 60, 0);
-    expect(buttonGrid.buttons[2][0].color).toEqual('red');
+    expect(buttonGrid.buttons[0][2].color).toEqual('red');
   });
 });
