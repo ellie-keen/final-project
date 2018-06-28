@@ -1,7 +1,14 @@
 describe('Button', function() {
-  it('has a default color', function() {
+
+  let button = new Button('blue', 20);
+
+  it('has a color', function() {
     let color = 'blue';
-    let button = new Button(color);
     expect(button.color).toEqual(color);
   });
+
+  it('has a size', function() {
+    let size = 20;
+    expect(button.size).toEqual(size);
+  })
 });
