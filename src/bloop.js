@@ -16,7 +16,7 @@ function createWave(audio, duration, waveType) {
 
 function note(audio, frequency, waveType) {
   return function() {
-    var duration = 1;
+    var duration = 2;
     var wave = createWave(audio, duration, waveType);
     wave.frequency.value = frequency;
     chain([wave, createAmplifier(audio, 0.2, duration), analyser, audio.destination]);
@@ -26,7 +26,6 @@ function note(audio, frequency, waveType) {
 analyser.fftSize = 2048;
 var bufferLength = analyser.frequencyBinCount;
 var dataArray = new Uint8Array(bufferLength);
-analyser.getByteTimeDomainData(dataArray)
 
 function rampDown(audio, value, startValue, duration) {
   value.setValueAtTime(startValue, audio.currentTime);
@@ -51,5 +50,6 @@ function play_sound(audio, frequency, waveType) {
   note(audio, frequency - 5, waveType)()
   note(audio, frequency - 3, waveType)()
 }
+
 
 play_sound(audio, 440, "sawtooth")
