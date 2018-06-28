@@ -1,4 +1,3 @@
-function Button(color, size) {
+function Button(color) {
   this.color = color;
-  this.size = size;
 }
