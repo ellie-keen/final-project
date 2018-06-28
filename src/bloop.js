@@ -1,36 +1,19 @@
 var audio = new AudioContext();
 
-function createSineWave(audio, duration) {
+function createWave(audio, duration, waveType) {
   var oscillator = audio.createOscillator();
-  oscillator.type = "sine";
+  oscillator.type = waveType;
   oscillator.start(audio.currentTime);
   oscillator.stop(audio.currentTime + duration);
   return oscillator
 };
 
-function createWave(audio, duration, wave) {
-  var oscillator = audio.createOscillator();
-  oscillator.type = wave;
-  oscillator.start(audio.currentTime);
-  oscillator.stop(audio.currentTime + duration);
-  return oscillator
-};
-
-function alternativeNote(audio, frequency, wave) {
+function note(audio, frequency, waveType) {
   return function() {
     var duration = 1;
-    var alternativeWave = createWave(audio, duration, wave);
-    alternativeWave.frequency.value = frequency;
-    chain([alternativeWave, createAmplifier(audio, 0.2, duration), audio.destination]);
-  };
-};
-
-function note(audio, frequency) {
-  return function() {
-    var duration = 1;
-    var sineWave = createSineWave(audio, duration);
-    sineWave.frequency.value = frequency;
-    chain([sineWave, createAmplifier(audio, 0.2, duration), audio.destination]);
+    var wave = createWave(audio, duration, waveType);
+    wave.frequency.value = frequency;
+    chain([wave, createAmplifier(audio, 0.2, duration), audio.destination]);
   };
 };
 
@@ -51,11 +34,11 @@ function chain(sounds) {
   }
 };
 
-function play_sound(audio, frequency, wave) {
-  alternativeNote(audio, frequency, wave)()
-  alternativeNote(audio, frequency, wave)()
-  alternativeNote(audio, frequency - 5, wave)()
-  alternativeNote(audio, frequency - 3, wave)()
+function play_sound(audio, frequency, waveType) {
+  note(audio, frequency, waveType)()
+  note(audio, frequency, waveType)()
+  note(audio, frequency - 5, waveType)()
+  note(audio, frequency - 3, waveType)()
 }
 
 play_sound(audio, 440, "sawtooth")

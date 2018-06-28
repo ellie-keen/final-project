@@ -8,7 +8,7 @@ window.onload = function() {
     for(let i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener("click", function() {
         this.style.backgroundColor = 'red'
-        sound.playSound(audioFile);
+        play_sound(audio, 440, "sawtooth");
       })
     }
   }
