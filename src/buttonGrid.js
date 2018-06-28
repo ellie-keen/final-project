@@ -1,11 +1,13 @@
-function ButtonGrid() {
+function ButtonGrid(rows, cols) {
   this.buttons = [];
+  this.rows = rows;
+  this.cols = cols;
 }
 
-ButtonGrid.prototype.init = function(rows, cols) {
-  for (let i = 0; i < rows; i++) {
+ButtonGrid.prototype.init = function() {
+  for (let i = 0; i < this.rows; i++) {
     var buttonRow = [];
-    for (let j = 0; j < cols; j++) {
+    for (let j = 0; j < this.cols; j++) {
       buttonRow.push(new Button('blue'));
     }
     this.buttons.push(buttonRow);
