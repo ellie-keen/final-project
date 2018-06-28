@@ -4,6 +4,8 @@ try {
     throw new Error('The Web Audio API is unavailable');
 }
 
+var analyser = audio.createAnalyser()
+
 function createWave(audio, duration, waveType) {
   var oscillator = audio.createOscillator();
   oscillator.type = waveType;
@@ -17,9 +19,14 @@ function note(audio, frequency, waveType) {
     var duration = 1;
     var wave = createWave(audio, duration, waveType);
     wave.frequency.value = frequency;
-    chain([wave, createAmplifier(audio, 0.2, duration), audio.destination]);
+    chain([wave, createAmplifier(audio, 0.2, duration), analyser, audio.destination]);
   };
 };
+
+analyser.fftSize = 2048;
+var bufferLength = analyser.frequencyBinCount;
+var dataArray = new Uint8Array(bufferLength);
+analyser.getByteTimeDomainData(dataArray)
 
 function rampDown(audio, value, startValue, duration) {
   value.setValueAtTime(startValue, audio.currentTime);
