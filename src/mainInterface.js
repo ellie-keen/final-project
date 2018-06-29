@@ -15,5 +15,5 @@ window.onload = function() {
   gridView.drawGrid(buttonGrid);
 
 
-  clock.interval(buttonGrid, clock);
+  clock.interval(buttonGrid);
 };

@@ -1,9 +1,13 @@
 function Clock() {
-  this.step = 0
+  this.step = 0;
 }
 
-Clock.prototype.interval = function(buttonGrid, clock) {
+Clock.prototype.interval = function(buttonGrid) {
+  var self = this;
   setInterval(function() {
-    clock.step === buttonGrid.cols - 1 ? clock.step = 0 : clock.step++;
+    self.step === buttonGrid.cols - 1 ? self.step = 0 : self.step++;
+    for (i = 0; i < buttonGrid.rows; i++){
+     playSound(buttonGrid.buttons[i][self.step]);
+    }
   },1000)
 }
