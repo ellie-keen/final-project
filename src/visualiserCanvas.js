@@ -2,7 +2,7 @@ var canvas = document.getElementById('visualiserCanvas');
 var visualiserContext = canvas.getContext("2d");
 
 var WIDTH = 800;
-var HEIGHT = 500;
+var HEIGHT = 600;
 
 visualiserContext.clearRect(0, 0, WIDTH, HEIGHT);
 
