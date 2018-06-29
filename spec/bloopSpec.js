@@ -4,14 +4,13 @@ describe("Bloop", function(){
     var audio = new AudioContext();
   })
 
-  describe("createSineWave", function(){
+  describe("createWave", function(){
     it("should return an oscillator object", function(){
-      expect(createSineWave(audio, 2)).toEqual(jasmine.any(OscillatorNode))
+      expect(createWave(audio, 2)).toEqual(jasmine.any(OscillatorNode))
     });
 
     it("should create a sine wave", function(){
-      createSineWave(audio, 2)
-      expect(createSineWave(audio, 2).type).toEqual("sine")
+      expect(createWave(audio, 2, "sine").type).toEqual("sine")
     });
   });
 
