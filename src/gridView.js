@@ -24,7 +24,7 @@ GridView.prototype.update = function(buttonGrid, x, y) {
     var row = Math.floor(y / this.buttonSize / this.gap);
     var col = Math.floor(x / this.buttonSize / this.gap);
     var button = buttonGrid.buttons[row][col];
-    button.color = 'red';
+    button.toggle();
     console.log(buttonGrid);
   }
 };
