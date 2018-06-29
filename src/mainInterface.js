@@ -2,7 +2,7 @@ window.onload = function() {
   var canvas = document.getElementById('screen');
   var context = canvas.getContext('2d');
   var gridView = new GridView(context);
-  var buttonGrid = new ButtonGrid(5, 5);
+  var buttonGrid = new ButtonGrid(8, 16);
   var audioFile = document.getElementById('audio');
   var sound = new Sound();
 
