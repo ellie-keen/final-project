@@ -23,10 +23,6 @@ function note(audio, frequency, waveType) {
   };
 };
 
-analyser.fftSize = 2048;
-var bufferLength = analyser.frequencyBinCount;
-var dataArray = new Uint8Array(bufferLength);
-
 function rampDown(audio, value, startValue, duration) {
   value.setValueAtTime(startValue, audio.currentTime);
   value.exponentialRampToValueAtTime(0.01, audio.currentTime + duration);
@@ -50,6 +46,5 @@ function play_sound(audio, frequency, waveType) {
   note(audio, frequency - 5, waveType)()
   note(audio, frequency - 3, waveType)()
 }
-
 
 play_sound(audio, 440, "sawtooth")
