@@ -3,12 +3,11 @@ describe('Button', function() {
   var button;
 
   beforeEach(function() {
-    button = new Button('blue', 1);
+    button = new Button(1);
   });
 
   it('has a color', function() {
-    let color = 'blue';
-    expect(button.color).toEqual(color);
+    expect(button.color).toEqual('blue');
   });
 
   it('has a frequency', function() {
@@ -29,5 +28,16 @@ describe('Button', function() {
     button.toggle();
     button.toggle();
     expect(button.isOn).toEqual(false);
+  });
+
+  it('changes to red when turned on', function(){
+    button.toggle();
+    expect(button.color).toEqual('red');
+  });
+
+  it('changes to blue when turned off', function() {
+    button.toggle();
+    button.toggle();
+    expect(button.color).toEqual('blue');
   });
 });
