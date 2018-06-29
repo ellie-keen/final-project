@@ -5,6 +5,7 @@ window.onload = function() {
   var buttonGrid = new ButtonGrid(8, 16);
   var audioFile = document.getElementById('audio');
   var sound = new Sound();
+  var clock = new Clock();
 
   buttonGrid.init();
   canvas.addEventListener('click', function(e) {
@@ -12,4 +13,7 @@ window.onload = function() {
     gridView.drawGrid(buttonGrid);
   });
   gridView.drawGrid(buttonGrid);
+
+
+  clock.interval(buttonGrid);
 };
