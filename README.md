@@ -13,7 +13,11 @@ How to run ESLint:
 `npm run eslint`
 
 How to open the application:
-`npm run start`
+`npm run start` 
+
+You can now visit [http://localhost:3000/](localhost:3000)
+
+
 
 #### User Stories
 
