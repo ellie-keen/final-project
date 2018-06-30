@@ -17,6 +17,4 @@ describe('ButtonGrid', function() {
     expect(buttonGrid.buttons[1][0].frequency).toEqual(110);
     expect(buttonGrid.buttons[1][1].frequency).toEqual(110);
   })
-
-
 });

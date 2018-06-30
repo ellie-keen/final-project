@@ -22,10 +22,7 @@ describe("Bloop", function(){
 
   describe("createAmplifier", function(){
     it("should return an amplifier", function(){
-      console.log(createAmplifier(audio, 1, 1));
       expect(createAmplifier(audio, 1, 1)).toEqual(jasmine.any(GainNode))
     });
   });
-
-
 });

@@ -9,7 +9,6 @@ describe("Sound", function() {
   });
 
   describe("playSound", function(){
-
     it("calls play", function(){
       sound.playSound(audioFile)
       expect(audioFile.play).toHaveBeenCalled();

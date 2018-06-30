@@ -11,7 +11,6 @@ Clock.prototype.interval = function(buttonGrid) {
      self.play(buttonGrid.buttons[i][self.step]);
     }
   },intervalDuration)
-
 }
 
 Clock.prototype.play = function(button) {
