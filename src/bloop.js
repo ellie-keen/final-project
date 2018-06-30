@@ -46,5 +46,3 @@ function play_sound(audio, frequency, waveType) {
   note(audio, frequency - 5, waveType)()
   note(audio, frequency - 3, waveType)()
 }
-
-play_sound(audio, 440, "sawtooth")
