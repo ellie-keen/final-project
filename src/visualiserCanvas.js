@@ -1,4 +1,4 @@
-var canvas = document.getElementById('visualiserCanvas');
+var canvas = document.getElementById('visualiser');
 var visualiserContext = canvas.getContext("2d");
 
 var WIDTH = 800;
@@ -15,15 +15,17 @@ function draw() {
   var rValue = Math.floor((Math.random() * 255) + 1);
   var gValue = Math.floor((Math.random() * 255) + 1);
   var bValue = Math.floor((Math.random() * 255) + 1);
-  var lineSize = Math.floor((Math.random() * 15) + 1);
+  var lineSize = 3;
+  var colors = ['#383736', '#D22F2D', '#AA0713', '#03193E', '#000105', '#ad0532', '#ed2d2d', '#0b0c0c']
 
   drawVisual = requestAnimationFrame(draw);
   analyser.getByteTimeDomainData(dataArray);
 
-  visualiserContext.fillStyle = `rgb(255, 255, 255, 0)`;
+  visualiserContext.fillStyle = '#03193E';
   visualiserContext.fillRect(0, 0, WIDTH, HEIGHT);
   visualiserContext.lineWidth = lineSize;
-  visualiserContext.strokeStyle = `rgb(${rValue}, ${gValue}, ${bValue})`;
+  // visualiserContext.strokeStyle = `rgb(${rValue}, ${gValue}, ${bValue})`;
+  visualiserContext.strokeStyle = colors[Math.floor(Math.random()*colors.length)];
   visualiserContext.beginPath();
 
   var sliceWidth = WIDTH * 1.0 / bufferLength;
@@ -45,5 +47,6 @@ function draw() {
   visualiserContext.lineTo(canvas.width, canvas.height/2);
     visualiserContext.stroke();
 }
+
 
 draw()

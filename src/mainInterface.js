@@ -1,5 +1,5 @@
 window.onload = function() {
-  var canvas = document.getElementById('screen');
+  var canvas = document.getElementById('button-grid');
   var context = canvas.getContext('2d');
   var gridView = new GridView(context);
   var buttonGrid = new ButtonGrid(8, 16);
