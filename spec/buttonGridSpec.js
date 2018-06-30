@@ -1,13 +1,13 @@
 describe('ButtonGrid', function() {
   var buttonGrid;
   beforeEach(function() {
-    buttonGrid = new ButtonGrid(5,5);
+    buttonGrid = new ButtonGrid(16,8);
   });
 
   it('initializes a 2d array of buttons', function() {
     buttonGrid.init();
-    expect(buttonGrid.buttons.length).toEqual(5);
-    expect(buttonGrid.buttons[0].length).toEqual(5);
+    expect(buttonGrid.buttons.length).toEqual(16);
+    expect(buttonGrid.buttons[0].length).toEqual(8);
   });
 
   it('adds higher frequency for each buttons\' row', function() {
