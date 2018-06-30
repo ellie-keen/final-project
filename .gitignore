@@ -1,5 +1,8 @@
+# Generated after running npm install
 node_modules
-package-lock.json
-cypress.json
+
+# Generated after running Istanbul
 coverage
-MIT.LICENSE
+
+# Generated from iOS
+.DS_Store

@@ -7,7 +7,11 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "cypress open"
+    "unit-test": "open SpecRunner.html",
+    "feature-test": "./node_modules/cypress/bin/cypress run --spec cypress/integration/examples/*",
+    "istanbul": "node ./node_modules/.bin/istanbul cover src/*",
+    "eslint": "./node_modules/.bin/eslint src/*",
+    "start": "open index.html"
   },
   "repository": {
     "type": "git",
