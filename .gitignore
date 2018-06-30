@@ -3,3 +3,6 @@ node_modules
 
 # Generated after running Istanbul
 coverage
+
+# Generated from iOS
+.DS_Store
