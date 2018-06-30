@@ -8,12 +8,12 @@ Clock.prototype.interval = function(buttonGrid) {
   setInterval(function() {
     self.step === buttonGrid.cols - 1 ? self.step = 0 : self.step++;
     for (i = 0; i < buttonGrid.rows; i++){
-     self.playSound(buttonGrid.buttons[i][self.step]);
+     self.play(buttonGrid.buttons[i][self.step]);
     }
   },intervalDuration)
 
 }
 
-Clock.prototype.playSound = function(button) {
-  button.isOn ? play_sound(audio, button.frequency, "sine") : null;
+Clock.prototype.play = function(button) {
+  button.isOn ? playSound(audio, button.frequency, "sine") : null;
 }

@@ -40,7 +40,7 @@ function chain(sounds) {
   }
 };
 
-function play_sound(audio, frequency, waveType) {
+function playSound(audio, frequency, waveType) {
   note(audio, frequency, waveType)()
   note(audio, frequency, waveType)()
   note(audio, frequency - 5, waveType)()
