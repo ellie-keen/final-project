@@ -4,7 +4,6 @@ window.onload = function() {
   var gridView = new GridView(context);
   var buttonGrid = new ButtonGrid(8, 16);
   var audioFile = document.getElementById('audio');
-  var sound = new Sound();
   var clock = new Clock();
 
   buttonGrid.init();
@@ -13,7 +12,6 @@ window.onload = function() {
     gridView.drawGrid(buttonGrid);
   });
   gridView.drawGrid(buttonGrid);
-
 
   clock.interval(buttonGrid);
 };

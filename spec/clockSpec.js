@@ -8,7 +8,5 @@ describe("Clock", function() {
 
   it("has a step", function() {
     expect(clock.step).toEqual(0)
-  });
-
-  
+  });  
 });
