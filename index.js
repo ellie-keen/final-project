@@ -11,4 +11,4 @@ app.get('/', function(req, res) {
 });
 
 // use port 3000 unless there exists a preconfigured port
-app.listen(port, () => console.log(`Listening on port ${port}));
+app.listen(port, () => console.log(`Listening on port ${port}`));
