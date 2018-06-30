@@ -4,11 +4,10 @@ describe('GridView', function() {
   var gridWidth = 16;
   var gridHeight = 8;
 
-  it('draws the 5 x 5 grid', function() {
+  it('draws the 16 x 8 grid', function() {
     let buttonGrid = new ButtonGrid(gridWidth, gridHeight);
     buttonGrid.init();
     gridView.drawGrid(buttonGrid);
-    expect(context.fillRect).toHaveBeenCalled();
     expect(context.fillRect).toHaveBeenCalledTimes(128);
   });
 
