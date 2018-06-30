@@ -25,7 +25,6 @@ GridView.prototype.update = function(buttonGrid, x, y) {
     var col = Math.floor(x / this.buttonSize / this.gap);
     var button = buttonGrid.buttons[row][col];
     button.toggle();
-    console.log(buttonGrid);
   }
 };
 
