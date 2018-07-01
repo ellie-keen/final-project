@@ -3,7 +3,9 @@ window.onload = function() {
   var visualiserCanvas = document.getElementById('visualiserCanvas');
   var keyboardContext = keyboardCanvas.getContext('2d');
 
-  var buttonGrid = new ButtonGrid(8, 16);
+  var height = 8;
+  var width = 16;
+  var buttonGrid = new ButtonGrid(height, width);
   var gridView = new GridView(keyboardContext);
 
   var audio = new AudioContext();
