@@ -10,11 +10,11 @@ describe('ButtonGrid', function() {
     expect(buttonGrid.buttons[0].length).toEqual(8);
   });
 
-  it('adds higher frequency for each buttons\' row', function() {
+  it('adds different frequency value for each buttons\' row', function() {
     buttonGrid.init();
-    expect(buttonGrid.buttons[0][0].frequency).toEqual(80);
-    expect(buttonGrid.buttons[0][1].frequency).toEqual(80);
-    expect(buttonGrid.buttons[1][0].frequency).toEqual(110);
-    expect(buttonGrid.buttons[1][1].frequency).toEqual(110);
+    expect(buttonGrid.buttons[0][0].frequency).toEqual(400);
+    expect(buttonGrid.buttons[0][1].frequency).toEqual(400);
+    expect(buttonGrid.buttons[1][0].frequency).toEqual(360);
+    expect(buttonGrid.buttons[1][1].frequency).toEqual(360);
   })
 });
