@@ -11,7 +11,7 @@ Clock.prototype.interval = function(buttonGrid) {
     for (var i = 0; i < buttonGrid.rows; i++) {
       var b = buttonGrid.buttons[i][self.step];
       b.color = b.isOn ? 'red' : 'blue';
-      self.gridView.drawGrid();
+      self.gridView.drawGrid(buttonGrid);
     }
 
     self.step === buttonGrid.cols - 1 ? (self.step = 0) : self.step++;
@@ -19,7 +19,7 @@ Clock.prototype.interval = function(buttonGrid) {
       var button = buttonGrid.buttons[i][self.step];
       self._play(buttonGrid.buttons[i][self.step]);
       button.color = 'green';
-      self.gridView.drawGrid();
+      self.gridView.drawGrid(buttonGrid);
     }
   }, intervalDuration);
 };
