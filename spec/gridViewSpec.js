@@ -12,8 +12,8 @@ describe('GridView', function() {
   });
 
   it('changes the color of a selected button', function() {
-    expect(buttonGrid.buttons[0][2].color).toEqual('blue');
+    expect(buttonGrid.buttons[0][2].color).toEqual('#3a5fe5');
     gridView.update(buttonGrid, 105, 0);
-    expect(buttonGrid.buttons[0][2].color).toEqual('red');
+    expect(buttonGrid.buttons[0][2].color).toEqual('#D22F2D');
   });
 });

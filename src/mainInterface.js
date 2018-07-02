@@ -20,6 +20,12 @@ window.onload = function() {
     gridView.drawGrid(buttonGrid);
   });
 
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 32){
+      sound.changeWaveType();
+    }
+  }
+
   buttonGrid.init();
   gridView.drawGrid(buttonGrid);
   clock.interval(buttonGrid);
