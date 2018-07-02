@@ -1,8 +1,8 @@
-function ButtonGrid(rows, cols) {
+function ButtonGrid(rows, cols, key) {
   this.buttons = [];
   this.rows = rows;
   this.cols = cols;
-  this.key = [440, 415, 369, 329, 293, 277, 246, 220]
+  this.key = key
 }
 
 ButtonGrid.prototype.init = function() {
@@ -11,7 +11,7 @@ ButtonGrid.prototype.init = function() {
   for (let row = 0; row < this.rows; row++) {
     var buttonRow = [];
     for (let col = 0; col < this.cols; col++) {
-      buttonRow.push(new Button(self.key[row]));
+      buttonRow.push(new Button(self.key.a[row]));
     }
     this.buttons.push(buttonRow);
   }

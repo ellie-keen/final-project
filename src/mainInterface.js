@@ -5,7 +5,7 @@ window.onload = function() {
 
   var rows = 8;
   var cols = 16;
-  var buttonGrid = new ButtonGrid(rows, cols);
+  var buttonGrid = new ButtonGrid(rows, cols, key);
   var gridView = new GridView(keyboardContext);
 
   var audio = new AudioContext();
