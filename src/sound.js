@@ -1,10 +1,12 @@
-function Sound(audio, analyser) {
+function Sound(audio, analyser, key) {
   this.audio = audio;
   this.analyser = analyser;
+  this.key = key;
 }
 
-Sound.prototype.playSound = function(frequency, waveType) {
-  this._note(frequency, waveType);
+Sound.prototype.playSound = function(row, waveType) {
+  this._note(this.key.value[row], waveType);
+  console.log(this.key.value[row])
   // this._note(frequency, waveType);
   // this._note(frequency - 5, waveType);
   // this._note(frequency - 3, waveType);

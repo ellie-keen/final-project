@@ -13,11 +13,9 @@ describe('ButtonGrid', function() {
     expect(buttonGrid.buttons[0].length).toEqual(8);
   });
 
-  it('adds different frequency value for each buttons\' row', function() {
+  it('adds different row value for each buttons\' row', function() {
     buttonGrid.init();
-    expect(buttonGrid.buttons[0][0].frequency).toEqual(440);
-    expect(buttonGrid.buttons[0][1].frequency).toEqual(440);
-    expect(buttonGrid.buttons[1][0].frequency).toEqual(415);
-    expect(buttonGrid.buttons[1][1].frequency).toEqual(415);
+    expect(buttonGrid.buttons[0][0].row).toEqual(0);
+    expect(buttonGrid.buttons[1][0].row).toEqual(1);
   })
 });

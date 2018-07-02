@@ -11,7 +11,7 @@ window.onload = function() {
 
   var audio = new AudioContext();
   var analyser = audio.createAnalyser();
-  var sound = new Sound(audio, analyser);
+  var sound = new Sound(audio, analyser, key);
   var clock = new Clock(sound, gridView);
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
@@ -25,8 +25,7 @@ window.onload = function() {
     if(e.keyCode === 75) {
       key.change();
     }
-    gridView.drawGrid(buttonGrid);
-  }
+   }
 
   buttonGrid.init();
   gridView.drawGrid(buttonGrid);

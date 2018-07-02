@@ -1,9 +1,9 @@
 buttonColorInactive = '#3a5fe5';
 buttonColourActive = '#D22F2D';
 
-function Button(frequency) {
+function Button(row) {
   this.color = buttonColorInactive;
-  this.frequency = frequency;
+  this.row = row;
   this.isOn = false;
 }
 

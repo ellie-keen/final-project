@@ -25,5 +25,5 @@ Clock.prototype.interval = function(buttonGrid) {
 };
 
 Clock.prototype._play = function(button) {
-  button.isOn ? this.sound.playSound(button.frequency, 'triangle') : null;
+  button.isOn ? this.sound.playSound(button.row, 'triangle') : null;
 };
