@@ -7,7 +7,7 @@ describe('Button', function() {
   });
 
   it('has a color', function() {
-    expect(button.color).toEqual('blue');
+    expect(button.color).toEqual('#3a5fe5');
   });
 
   it('has a row', function() {
@@ -31,12 +31,12 @@ describe('Button', function() {
 
   it('changes to red when turned on', function(){
     button.toggle();
-    expect(button.color).toEqual('red');
+    expect(button.color).toEqual('#D22F2D');
   });
 
   it('changes to blue when turned off', function() {
     button.toggle();
     button.toggle();
-    expect(button.color).toEqual('blue');
+    expect(button.color).toEqual('#3a5fe5');
   });
 });

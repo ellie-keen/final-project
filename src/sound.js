@@ -2,19 +2,23 @@ function Sound(audio, analyser, key) {
   this.audio = audio;
   this.analyser = analyser;
   this.key = key;
+  this.waveTypes = ['sine', 'sawtooth', 'square', 'triangle'];
+  this.counter = 0;
+  this.waveType = this.waveTypes[this.counter];
 }
 
-Sound.prototype.playSound = function(row, waveType) {
-  this._note(this.key.value[row], waveType);
-  console.log(this.key.value[row])
-  // this._note(frequency, waveType);
-  // this._note(frequency - 5, waveType);
-  // this._note(frequency - 3, waveType);
+Sound.prototype.playSound = function(row) {
+  this._note(this.key.value[row]);
 };
 
-Sound.prototype._note = function(frequency, waveType) {
+Sound.prototype.changeWaveType = function() {
+  this.counter === this.waveTypes.length - 1 ? this.counter = 0 : this.counter++;
+  this.waveType = this.waveTypes[this.counter];
+}
+
+Sound.prototype._note = function(frequency) {
   var duration = 2;
-  var wave = this._createWave(duration, waveType);
+  var wave = this._createWave(duration);
   wave.frequency.value = frequency;
   this._chain([
     wave,
@@ -24,9 +28,9 @@ Sound.prototype._note = function(frequency, waveType) {
   ]);
 };
 
-Sound.prototype._createWave = function(duration, waveType) {
+Sound.prototype._createWave = function(duration) {
   var oscillator = this.audio.createOscillator();
-  oscillator.type = waveType;
+  oscillator.type = this.waveType;
   oscillator.start(this.audio.currentTime);
   oscillator.stop(this.audio.currentTime + duration);
   return oscillator;
