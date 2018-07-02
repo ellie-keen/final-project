@@ -10,7 +10,7 @@ window.onload = function() {
 
   var audio = new AudioContext();
   var analyser = audio.createAnalyser();
-  var sound = new Sound(audio, analyser, 'sine');
+  var sound = new Sound(audio, analyser);
   var clock = new Clock(sound, gridView);
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
@@ -19,6 +19,13 @@ window.onload = function() {
     gridView.update(buttonGrid, e.offsetX, e.offsetY);
     gridView.drawGrid(buttonGrid);
   });
+
+  document.body.onkeyup = function(e) {
+    if(e.keyCode == 32){
+      sound.changeWaveType();
+      console.log(sound.waveType);
+    }
+  }
 
   buttonGrid.init();
   gridView.drawGrid(buttonGrid);
