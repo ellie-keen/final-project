@@ -10,7 +10,7 @@ Clock.prototype.interval = function(buttonGrid) {
   setInterval(function() {
     for (var i = 0; i < buttonGrid.rows; i++) {
       var b = buttonGrid.buttons[i][self.step];
-      b.color = b.isOn ? 'red' : 'blue';
+      b.color = b.isOn ? '#D22F2D' : '#3a5fe5';
       self.gridView.drawGrid(buttonGrid);
     }
 
