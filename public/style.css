@@ -1,11 +1,26 @@
-.background {
-  z-index: 1;
+body {
+  background-color: #03193E;
+}
+
+canvas {
   position: absolute;
 }
 
-.foreground {
- margin-left: 40px;
- margin-top: 40px;
- z-index: 2;
- position: absolute;
+#visualiser {
+  z-index: 1;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: -250px;
+  transform: rotate(90deg);
+}
+
+#button-grid {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 22%;
+  margin-right: 22%;
+  margin-top: 15%;
+  display: block;
+  width: 800px;
+  z-index: 2;
 }

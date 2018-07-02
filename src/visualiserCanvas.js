@@ -9,15 +9,12 @@ function Visualiser(canvas, analyser) {
 }
 
 Visualiser.prototype.draw = function() {
-  var rValue = Math.floor(Math.random() * 255 + 1);
-  var gValue = Math.floor(Math.random() * 255 + 1);
-  var bValue = Math.floor(Math.random() * 255 + 1);
-  var lineSize = Math.floor(Math.random() * 15 + 1);
-
-  this.context.fillStyle = `rgb(255, 255, 255, 0)`;
+  var colors = ['#383736', '#D22F2D', '#AA0713', '#03193E', '#000105', '#ad0532', '#ed2d2d', '#0b0c0c']
+  var lineSize = 3;
+  this.context.fillStyle = '#03193E';
   this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
   this.context.lineWidth = lineSize;
-  this.context.strokeStyle = `rgb(${rValue}, ${gValue}, ${bValue})`;
+  this.context.strokeStyle = colors[Math.floor(Math.random()*colors.length)];
   this.context.beginPath();
 
   this.analyser.getByteTimeDomainData(this.dataArray);
