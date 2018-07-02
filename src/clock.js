@@ -27,6 +27,9 @@ Clock.prototype.interval = function(buttonGrid) {
 Clock.prototype.incrementIntervalDuration = function() {
   var incrementValue = 100;
   this.intervalDuration += incrementValue;
+  if (this.intervalDuration > 5000) {
+    this.intervalDuration = 5000;
+  }
 };
 
 Clock.prototype.decrementIntervalDuration = function() {

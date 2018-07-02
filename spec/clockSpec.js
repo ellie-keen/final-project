@@ -32,5 +32,12 @@ describe("Clock", function() {
       clock.decrementIntervalDuration();
       expect(clock.intervalDuration).toEqual(100);
     });
+
+    it("should not increment above 5000", function() {
+      clock.intervalDuration = 4900;
+      clock.incrementIntervalDuration();
+      clock.incrementIntervalDuration();
+      expect(clock.intervalDuration).toEqual(5000);
+    });
   });
 });
