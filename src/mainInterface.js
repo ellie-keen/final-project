@@ -23,7 +23,6 @@ window.onload = function() {
   document.body.onkeyup = function(e) {
     if(e.keyCode == 32){
       sound.changeWaveType();
-      console.log(sound.waveType);
     }
   }
 
