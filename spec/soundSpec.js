@@ -1,25 +1,20 @@
 describe('Sound', function() {
   var audio = new AudioContext();
   var analyser = audio.createAnalyser();
+  var waveType = 'sine';
   var sound;
 
   beforeEach(function() {
-    sound = new Sound(audio, analyser);
+    sound = new Sound(audio, analyser, waveType);
   });
 
   describe('createWave', function() {
     it('should return an oscillator object', function() {
-      expect(sound._createWave(2, 'sine')).toEqual(jasmine.any(OscillatorNode));
+      expect(sound._createWave(2)).toEqual(jasmine.any(OscillatorNode));
     });
 
     it('should create a sine wave', function() {
-      expect(sound._createWave(2, 'sine').type).toEqual('sine');
-    });
-  });
-
-  describe('note', function() {
-    it('should return a function', function() {
-      expect(sound._note(2, 'sine')).toEqual(jasmine.any(Function));
+      expect(sound._createWave(2).type).toEqual('sine');
     });
   });
 

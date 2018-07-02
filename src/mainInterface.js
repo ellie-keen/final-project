@@ -10,7 +10,7 @@ window.onload = function() {
 
   var audio = new AudioContext();
   var analyser = audio.createAnalyser();
-  var sound = new Sound(audio, analyser);
+  var sound = new Sound(audio, analyser, 'sine');
   var clock = new Clock(sound, gridView);
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
