@@ -3,15 +3,15 @@ window.onload = function() {
   var visualiserCanvas = document.getElementById('visualiserCanvas');
   var keyboardContext = keyboardCanvas.getContext('2d');
 
-  var height = 8;
-  var width = 16;
-  var buttonGrid = new ButtonGrid(height, width);
+  var rows = 8;
+  var cols = 16;
+  var buttonGrid = new ButtonGrid(rows, cols);
   var gridView = new GridView(keyboardContext);
 
   var audio = new AudioContext();
   var analyser = audio.createAnalyser();
   var sound = new Sound(audio, analyser);
-  var clock = new Clock(sound);
+  var clock = new Clock(sound, gridView);
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
 
