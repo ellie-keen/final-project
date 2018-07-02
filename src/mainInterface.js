@@ -2,6 +2,7 @@ window.onload = function() {
   var keyboardCanvas = document.getElementById('keyboardCanvas');
   var visualiserCanvas = document.getElementById('visualiserCanvas');
   var keyboardContext = keyboardCanvas.getContext('2d');
+  var key = new Key();
 
   var rows = 8;
   var cols = 16;
