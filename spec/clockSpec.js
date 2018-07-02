@@ -21,5 +21,16 @@ describe("Clock", function() {
       expect(clock.intervalDuration).toEqual(600);
     });
 
+    it("should decrement intervalDuration by 100", function() {
+      clock.decrementIntervalDuration();
+      expect(clock.intervalDuration).toEqual(400);
+    });
+
+    it("should not decrement below 100", function() {
+      clock.intervalDuration = 200;
+      clock.decrementIntervalDuration();
+      clock.decrementIntervalDuration();
+      expect(clock.intervalDuration).toEqual(100);
+    });
   });
 });

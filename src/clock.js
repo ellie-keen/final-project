@@ -29,6 +29,14 @@ Clock.prototype.incrementIntervalDuration = function() {
   this.intervalDuration += incrementValue;
 };
 
+Clock.prototype.decrementIntervalDuration = function() {
+  var decrementValue = 100;
+  this.intervalDuration -= decrementValue;
+  if (this.intervalDuration < 100) {
+    this.intervalDuration = 100;
+  }
+};
+
 Clock.prototype._play = function(button) {
   button.isOn ? this.sound.playSound(button.frequency) : null;
 };
