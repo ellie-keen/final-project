@@ -10,9 +10,8 @@ describe('Button', function() {
     expect(button.color).toEqual('#3a5fe5');
   });
 
-  it('has a frequency', function() {
-    let frequency = 1
-    expect(button.frequency).toEqual(1);
+  it('has a row', function() {
+    expect(button.row).toEqual(1);
   });
 
   it('is off when initialized', function() {

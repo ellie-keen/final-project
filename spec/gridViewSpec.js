@@ -2,7 +2,8 @@ describe('GridView', function() {
   var context = jasmine.createSpyObj('context', ['fillRect']);
   var gridWidth = 16;
   var gridHeight = 8;
-  var buttonGrid = new ButtonGrid(gridHeight, gridWidth);
+  var key = new Key();
+  var buttonGrid = new ButtonGrid(gridHeight, gridWidth, key);
   buttonGrid.init();
   var gridView = new GridView(context);
 

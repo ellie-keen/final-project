@@ -1,16 +1,14 @@
-function Sound(audio, analyser) {
+function Sound(audio, analyser, key) {
   this.audio = audio;
   this.analyser = analyser;
+  this.key = key;
   this.waveTypes = ['sine', 'sawtooth', 'square', 'triangle'];
   this.counter = 0;
   this.waveType = this.waveTypes[this.counter];
 }
 
-Sound.prototype.playSound = function(frequency) {
-  this._note(frequency);
-  this._note(frequency);
-  this._note(frequency - 5);
-  this._note(frequency - 3);
+Sound.prototype.playSound = function(row) {
+  this._note(this.key.value[row]);
 };
 
 Sound.prototype.changeWaveType = function() {
