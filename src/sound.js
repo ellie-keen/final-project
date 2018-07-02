@@ -5,9 +5,9 @@ function Sound(audio, analyser) {
 
 Sound.prototype.playSound = function(frequency, waveType) {
   this._note(frequency, waveType);
-  this._note(frequency, waveType);
-  this._note(frequency - 5, waveType);
-  this._note(frequency - 3, waveType);
+  // this._note(frequency, waveType);
+  // this._note(frequency - 5, waveType);
+  // this._note(frequency - 3, waveType);
 };
 
 Sound.prototype._note = function(frequency, waveType) {
