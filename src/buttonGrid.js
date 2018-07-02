@@ -10,7 +10,7 @@ ButtonGrid.prototype.init = function() {
   for (let row = 0; row < this.rows; row++) {
     var buttonRow = [];
     for (let col = 0; col < this.cols; col++) {
-      buttonRow.push(new Button(self.key.aKey[row]));
+      buttonRow.push(new Button(self.key.value[row]));
     }
     this.buttons.push(buttonRow);
   }
