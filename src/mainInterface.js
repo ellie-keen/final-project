@@ -15,19 +15,24 @@ window.onload = function() {
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
 
+  buttonGrid.init();
+  gridView.drawGrid(buttonGrid);
+  clock.interval(buttonGrid);
+  visualiser.draw();
+
   keyboardCanvas.addEventListener('click', function(e) {
     gridView.update(buttonGrid, e.offsetX, e.offsetY);
     gridView.drawGrid(buttonGrid);
   });
 
-  document.body.onkeyup = function(e) {
-    if(e.keyCode == 32){
+  document.body.onkeydown = function(e) {
+    if(e.keyCode == 32) {
       sound.changeWaveType();
+    } else if (e.keyCode == 38) {
+      clock.decrementIntervalDuration();
+    } else if (e.keyCode == 40) {
+      clock.incrementIntervalDuration();
     }
   }
 
-  buttonGrid.init();
-  gridView.drawGrid(buttonGrid);
-  clock.interval(buttonGrid);
-  visualiser.draw();
 };
