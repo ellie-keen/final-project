@@ -21,6 +21,13 @@ window.onload = function() {
     gridView.drawGrid(buttonGrid);
   });
 
+  document.body.onkeyup = function(e) {
+    if(e.keyCode === 75) {
+      key.change();
+    }
+    gridView.drawGrid(buttonGrid);
+  }
+
   buttonGrid.init();
   gridView.drawGrid(buttonGrid);
   clock.interval(buttonGrid);
