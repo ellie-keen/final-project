@@ -33,13 +33,13 @@ describe('Sound', function() {
       expect(sound.waveType).toEqual('sawtooth');
     });
 
-    it('should change to sawtooth after one change', function() {
+    it('should change to square after one change', function() {
       sound.changeWaveType();
       sound.changeWaveType();
       expect(sound.waveType).toEqual('square');
     })
 
-    it('should change to sawtooth after one change', function() {
+    it('should change to triangle after one change', function() {
       sound.changeWaveType();
       sound.changeWaveType();
       sound.changeWaveType();
