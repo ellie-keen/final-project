@@ -17,12 +17,6 @@ describe('Sound', function() {
     });
   });
 
-  describe('note', function() {
-    it('should return a function', function() {
-      expect(sound._note(2, 'sine')).toEqual(jasmine.any(Function));
-    });
-  });
-
   describe('createAmplifier', function() {
     it('should return an amplifier', function() {
       expect(sound._createAmplifier(0.2, 2)).toEqual(jasmine.any(GainNode));
