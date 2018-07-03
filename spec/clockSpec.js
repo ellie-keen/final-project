@@ -9,47 +9,37 @@ describe('Clock', function() {
     expect(clock.step).toEqual(0);
   });
 
-  it('has an intervalDuration of 500 as default', function() {
+  it('has an intervalDuration of 500 and a bpm of 120 as default', function() {
     expect(clock.intervalDuration).toEqual(500);
+    expect(clock.bpm).toEqual(120);
   });
 
   describe('incrementIntervalDuration', function() {
-    it('should increment intervalDuration by 100', function() {
+    it('should decrement bpm by 5', function() {
       clock.incrementIntervalDuration();
-      expect(clock.intervalDuration).toEqual(600);
+      expect(clock.bpm).toEqual(115);
+      expect(clock.intervalDuration).toEqual(521.7391304347826);
     });
 
-    it('should decrement intervalDuration by 100', function() {
+    it('should increment bpm by 5', function() {
       clock.decrementIntervalDuration();
-      expect(clock.intervalDuration).toEqual(400);
+      expect(clock.bpm).toEqual(125);
+      expect(clock.intervalDuration).toEqual(480);
     });
 
-    it('should not decrement below 100', function() {
-      clock.intervalDuration = 200;
-      clock.decrementIntervalDuration();
-      clock.decrementIntervalDuration();
-      expect(clock.intervalDuration).toEqual(100);
+    it('should not decrement below 50 bpm', function() {
+      clock.bpm = 55;
+      clock.incrementIntervalDuration();
+      clock.incrementIntervalDuration();
+      expect(clock.bpm).toEqual(50);
     });
 
-    it('should not increment above 5000', function() {
-      clock.intervalDuration = 4900;
-      clock.incrementIntervalDuration();
-      clock.incrementIntervalDuration();
-      expect(clock.intervalDuration).toEqual(5000);
+    it('should not increment above 300 BPM', function() {
+      clock.bpm = 295;
+      clock.decrementIntervalDuration();
+      clock.decrementIntervalDuration();
+      expect(clock.bpm).toEqual(300);
     });
   });
 
-  describe('getBPM', function() {
-    it('should return 120 when interval duration is 500', function() {
-      clock.intervalDuration = 500;
-      console.log(clock.intervalDuration);
-      expect(clock.getBPM()).toEqual(120);
-    });
-
-    it('should return 86 when interval duration is 700', function() {
-      clock.intervalDuration = 700;
-      console.log(clock.intervalDuration);
-      expect(clock.getBPM()).toEqual(86);
-    });
-  });
 });

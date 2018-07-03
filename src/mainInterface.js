@@ -18,7 +18,7 @@ window.onload = function() {
   var clock = new Clock(sound, gridView);
 
   keyDisplay.innerHTML = key.keyName;
-  bpm.innerHTML = clock.getBPM();
+  bpm.innerHTML = clock.bpm;
   waveTypeDisplay.innerHTML = sound.waveType;
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
@@ -42,12 +42,12 @@ window.onload = function() {
       waveTypeDisplay.innerHTML = sound.waveType;
     } else if (e.keyCode == 38) {
       clock.decrementIntervalDuration();
-      bpm.innerHTML = clock.getBPM();
+      bpm.innerHTML = clock.bpm;
       clock.clear();
       clock.interval(buttonGrid);
     } else if (e.keyCode == 40) {
       clock.incrementIntervalDuration();
-      bpm.innerHTML = clock.getBPM();
+      bpm.innerHTML = clock.bpm;
       clock.clear();
       clock.interval(buttonGrid);
     } else if (e.keyCode == 82) {
