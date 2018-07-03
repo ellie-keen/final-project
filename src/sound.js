@@ -19,7 +19,11 @@ Sound.prototype.changeWaveType = function() {
 Sound.prototype._note = function(frequency) {
   var duration = 2;
   var wave = this._createWave(duration);
-  wave.frequency.value = frequency;
+  if (frequency == 3) {
+    this._rampDown(wave.frequency, 200, duration)
+  } else {
+    wave.frequency.value = frequency;
+ }
   this._chain([
     wave,
     this._createAmplifier(0.2, duration),
