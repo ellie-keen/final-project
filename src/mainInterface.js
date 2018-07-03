@@ -30,9 +30,13 @@ window.onload = function() {
       sound.changeWaveType();
     } else if (e.keyCode == 38) {
       clock.decrementIntervalDuration();
+      clock.clear();
+      clock.interval(buttonGrid);
     } else if (e.keyCode == 40) {
       clock.incrementIntervalDuration();
+      clock.clear();
+      clock.interval(buttonGrid);
     }
-  }
+  };
 
 };

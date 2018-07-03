@@ -1,13 +1,14 @@
 function Clock(sound, gridView) {
   this.sound = sound;
   this.gridView = gridView;
-  this.intervalDuration = 500;
   this.step = 0;
+  this.intervalDuration = 500;
 }
 
 Clock.prototype.interval = function(buttonGrid) {
+  console.log(this.intervalDuration);
   var self = this;
-  setInterval(function() {
+  this.intervalID = setInterval(function() {
     for (var i = 0; i < buttonGrid.rows; i++) {
       var b = buttonGrid.buttons[i][self.step];
       b.color = b.isOn ? '#D22F2D' : '#3a5fe5';
@@ -22,6 +23,10 @@ Clock.prototype.interval = function(buttonGrid) {
       self.gridView.drawGrid(buttonGrid);
     }
   }, this.intervalDuration);
+};
+
+Clock.prototype.clear = function() {
+  clearInterval(this.intervalID);
 };
 
 Clock.prototype.incrementIntervalDuration = function() {
