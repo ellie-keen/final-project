@@ -52,7 +52,6 @@ window.onload = function() {
       clock.interval(buttonGrid);
     } else if (e.keyCode == 82) {
       buttonGrid.init();
-      gridView.drawGrid(buttonGrid);
       clock.clear();
       clock.interval(buttonGrid);
     }
