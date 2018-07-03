@@ -42,13 +42,11 @@ describe('Clock', function() {
   describe('getBPM', function() {
     it('should return 120 when interval duration is 500', function() {
       clock.intervalDuration = 500;
-      console.log(clock.intervalDuration);
       expect(clock.getBPM()).toEqual(120);
     });
 
     it('should return 86 when interval duration is 700', function() {
       clock.intervalDuration = 700;
-      console.log(clock.intervalDuration);
       expect(clock.getBPM()).toEqual(86);
     });
   });

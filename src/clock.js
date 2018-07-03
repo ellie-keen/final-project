@@ -51,3 +51,7 @@ Clock.prototype.getBPM = function() {
 Clock.prototype._play = function(button) {
   button.isOn ? this.sound.playSound(button.row) : null;
 };
+
+Clock.prototype.pause = function() {
+  this.clear();
+};

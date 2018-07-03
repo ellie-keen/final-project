@@ -50,6 +50,8 @@ window.onload = function() {
       bpm.innerHTML = clock.getBPM();
       clock.clear();
       clock.interval(buttonGrid);
+    } else if (e.keyCode == 80) {
+      clock.pause();
     }
   };
 };
