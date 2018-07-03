@@ -3,6 +3,7 @@ function Clock(sound, gridView) {
   this.gridView = gridView;
   this.step = 0;
   this.intervalDuration = 500;
+  this.isPaused = false;
 }
 
 Clock.prototype.interval = function(buttonGrid) {
@@ -54,4 +55,5 @@ Clock.prototype._play = function(button) {
 
 Clock.prototype.pause = function() {
   this.clear();
+  this.isPaused = true;
 };

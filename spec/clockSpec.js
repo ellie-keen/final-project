@@ -50,4 +50,11 @@ describe('Clock', function() {
       expect(clock.getBPM()).toEqual(86);
     });
   });
+
+  describe('pause', function() {
+    it('should pause the clock', function () {
+      clock.pause()
+      expect(clock.isPaused).toBe(true);
+    });
+  });
 });
