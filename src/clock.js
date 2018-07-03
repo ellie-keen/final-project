@@ -4,7 +4,7 @@ function Clock(sound, gridView) {
   this.step = 0;
   this.isPaused = false;
   this.bpm = 120;
-  this.intervalDuration = (60000 / this.bpm);
+  this.intervalDuration = 60000 / this.bpm;
 }
 
 Clock.prototype.interval = function(buttonGrid) {
@@ -21,7 +21,7 @@ Clock.prototype.interval = function(buttonGrid) {
     for (var i = 0; i < buttonGrid.rows; i++) {
       var button = buttonGrid.buttons[i][self.step];
       self._play(buttonGrid.buttons[i][self.step]);
-      button.color = 'green';
+      button.color = '#056340';
       self.gridView.drawGrid(buttonGrid);
     }
   }, this.intervalDuration);
@@ -35,14 +35,14 @@ Clock.prototype.clear = function() {
 Clock.prototype.incrementIntervalDuration = function() {
   if (this.bpm > 50) {
     this.bpm -= 5;
-    this.intervalDuration = (60000 / this.bpm);
+    this.intervalDuration = 60000 / this.bpm;
   }
 };
 
 Clock.prototype.decrementIntervalDuration = function() {
   if (this.bpm < 300) {
     this.bpm += 5;
-    this.intervalDuration = (60000 / this.bpm);
+    this.intervalDuration = 60000 / this.bpm;
   }
 };
 
