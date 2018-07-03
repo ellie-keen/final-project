@@ -51,7 +51,7 @@ window.onload = function() {
       clock.clear();
       clock.interval(buttonGrid);
     } else if (e.keyCode == 80) {
-      clock.pause();
+      clock.isPaused == false ? clock.pauseClock() : clock.startClock(buttonGrid);
     }
   };
 };
