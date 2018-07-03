@@ -1,10 +1,8 @@
 describe('ButtonGrid', function() {
   var buttonGrid;
-  var key;
 
   beforeEach(function() {
-    key = new Key();
-    buttonGrid = new ButtonGrid(16,8, key);
+    buttonGrid = new ButtonGrid(16,8);
   });
 
   it('initializes a 2d array of buttons', function() {
