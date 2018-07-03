@@ -1,5 +1,5 @@
-function Button(frequency) {
-  this.frequency = frequency;
+function Button(row) {
+  this.row = row;
   this.buttonColorInactive = '#3a5fe5';
   this.buttonColorActive = '#D22F2D';
   this.color = this.buttonColorInactive;

@@ -46,5 +46,5 @@ Clock.prototype.decrementIntervalDuration = function() {
 };
 
 Clock.prototype._play = function(button) {
-  button.isOn ? this.sound.playSound(button.frequency) : null;
+  button.isOn ? this.sound.playSound(button.row) : null;
 };
