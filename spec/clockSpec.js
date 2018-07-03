@@ -51,10 +51,17 @@ describe('Clock', function() {
     });
   });
 
-  describe('pause', function() {
+  describe('pauseClock', function() {
     it('should pause the clock', function () {
-      clock.pause()
+      clock.pauseClock()
       expect(clock.isPaused).toBe(true);
+    });
+  });
+
+  describe('startClock', function() {
+    it('should start the clock', function() {
+      clock.startClock()
+      expect(clock.isPaused).toBe(false)
     });
   });
 });

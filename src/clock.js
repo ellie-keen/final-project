@@ -53,7 +53,12 @@ Clock.prototype._play = function(button) {
   button.isOn ? this.sound.playSound(button.row) : null;
 };
 
-Clock.prototype.pause = function() {
+Clock.prototype.pauseClock = function() {
   this.clear();
   this.isPaused = true;
 };
+
+Clock.prototype.startClock = function(buttonGrid) {
+  this.interval(buttonGrid);
+  this.isPaused = false;
+}
