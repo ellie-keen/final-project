@@ -2,6 +2,7 @@ window.onload = function() {
   var keyboardCanvas = document.getElementById('keyboardCanvas');
   var visualiserCanvas = document.getElementById('visualiserCanvas');
   var bpm = document.getElementById('bpm');
+  var keyDisplay = document.getElementById('key');
   var keyboardContext = keyboardCanvas.getContext('2d');
   var key = new Key();
 
@@ -14,6 +15,7 @@ window.onload = function() {
   var analyser = audio.createAnalyser();
   var sound = new Sound(audio, analyser, key);
   var clock = new Clock(sound, gridView);
+  keyDisplay.innerHTML = key.keyName;
   bpm.innerHTML = clock.getBPM();
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
@@ -31,6 +33,7 @@ window.onload = function() {
   document.body.onkeydown = function(e) {
     if (e.keyCode === 75) {
       key.change();
+      keyDisplay.innerHTML = key.keyName;
     } else if (e.keyCode == 32) {
       sound.changeWaveType();
     } else if (e.keyCode == 38) {
