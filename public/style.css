@@ -1,5 +1,5 @@
 body {
-  background-color: #03193E;
+  background-color: #03193e;
   overflow: hidden;
 }
 
@@ -18,6 +18,27 @@ p {
 .instructions .instructions-text {
   visibility: hidden;
   background-color: white;
+}
+
+.container {
+  margin-top: 50px;
+  max-width: 800px;
+}
+
+.music-spacing {
+  margin-right: 10px;
+}
+
+#music-info {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  font-size: 15px;
+  font-family: verdana;
+}
+
+#visualiserCanvas {
   z-index: 1;
   position: absolute;
 }
@@ -51,6 +72,7 @@ p {
   padding-right: 0;
   margin-left: -250px;
   transform: rotate(90deg);
+  margin-top: 15%;
 }
 
 #keyboardCanvas {

@@ -45,6 +45,10 @@ Clock.prototype.decrementIntervalDuration = function() {
   }
 };
 
+Clock.prototype.getBPM = function() {
+  return Math.round(60000 / this.intervalDuration);
+};
+
 Clock.prototype._play = function(button) {
   button.isOn ? this.sound.playSound(button.row) : null;
 };
