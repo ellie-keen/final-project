@@ -7,18 +7,41 @@ canvas {
   position: absolute;
 }
 
-.instructions {
+p {
+  margin: 1px;
+}
+
+.fa-question-circle {
+  color: white;
+}
+
+.instructions .instructions-text {
+  visibility: hidden;
   background-color: white;
   z-index: 1;
-  width: 20%;
-  margin-left: 40%;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
 }
 
 .instructions-text {
   color: black;
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  right: 120px;
+}
+
+.instructions {
+  color: white;
+  width: 20%;
+  height: auto;
+  margin-left: 40%;
+  position: absolute;
+  bottom: 10px;
+  right: -100px;
+}
+
+.instructions:hover .instructions-text {
+  visibility: visible;
 }
 
 #visualiserCanvas {
