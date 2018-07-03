@@ -1,6 +1,9 @@
 window.onload = function() {
   var keyboardCanvas = document.getElementById('keyboardCanvas');
   var visualiserCanvas = document.getElementById('visualiserCanvas');
+  var bpm = document.getElementById('bpm');
+  var keyDisplay = document.getElementById('key');
+  var waveTypeDisplay = document.getElementById('waveType');
   var keyboardContext = keyboardCanvas.getContext('2d');
   var key = new Key();
 
@@ -13,6 +16,10 @@ window.onload = function() {
   var analyser = audio.createAnalyser();
   var sound = new Sound(audio, analyser, key);
   var clock = new Clock(sound, gridView);
+
+  keyDisplay.innerHTML = key.keyName;
+  bpm.innerHTML = clock.getBPM();
+  waveTypeDisplay.innerHTML = sound.waveType;
 
   var visualiser = new Visualiser(visualiserCanvas, analyser);
 
@@ -27,16 +34,20 @@ window.onload = function() {
   });
 
   document.body.onkeydown = function(e) {
-    if(e.keyCode === 75) {
+    if (e.keyCode === 75) {
       key.change();
-    } else if(e.keyCode == 32){
+      keyDisplay.innerHTML = key.keyName;
+    } else if (e.keyCode == 32) {
       sound.changeWaveType();
+      waveTypeDisplay.innerHTML = sound.waveType;
     } else if (e.keyCode == 38) {
       clock.decrementIntervalDuration();
+      bpm.innerHTML = clock.getBPM();
       clock.clear();
       clock.interval(buttonGrid);
     } else if (e.keyCode == 40) {
       clock.incrementIntervalDuration();
+      bpm.innerHTML = clock.getBPM();
       clock.clear();
       clock.interval(buttonGrid);
     }
