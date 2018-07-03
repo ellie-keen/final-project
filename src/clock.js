@@ -6,7 +6,6 @@ function Clock(sound, gridView) {
 }
 
 Clock.prototype.interval = function(buttonGrid) {
-  console.log(this.intervalDuration);
   var self = this;
   this.intervalID = setInterval(function() {
     for (var i = 0; i < buttonGrid.rows; i++) {
