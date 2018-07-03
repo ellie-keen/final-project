@@ -9,7 +9,7 @@ window.onload = function() {
 
   var rows = 8;
   var cols = 16;
-  var buttonGrid = new ButtonGrid(rows, cols, key);
+  var buttonGrid = new ButtonGrid(rows, cols);
   var gridView = new GridView(keyboardContext);
 
   var audio = new AudioContext();
@@ -34,7 +34,7 @@ window.onload = function() {
   });
 
   document.body.onkeydown = function(e) {
-    if (e.keyCode === 75) {
+    if (e.keyCode == 75) {
       key.change();
       keyDisplay.innerHTML = key.keyName;
     } else if (e.keyCode == 32) {
@@ -48,6 +48,11 @@ window.onload = function() {
     } else if (e.keyCode == 40) {
       clock.incrementIntervalDuration();
       bpm.innerHTML = clock.getBPM();
+      clock.clear();
+      clock.interval(buttonGrid);
+    } else if (e.keyCode == 82) {
+      buttonGrid.init();
+      gridView.drawGrid(buttonGrid);
       clock.clear();
       clock.interval(buttonGrid);
     }
