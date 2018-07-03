@@ -33,26 +33,12 @@ describe('Clock', function() {
       clock.incrementIntervalDuration();
       expect(clock.bpm).toEqual(50);
     });
-    
+
     it('should not increment above 300 BPM', function() {
       clock.bpm = 295;
       clock.decrementIntervalDuration();
       clock.decrementIntervalDuration();
       expect(clock.bpm).toEqual(300);
-    });
-  });
-
-  describe('pauseClock', function() {
-    it('should pause the clock', function () {
-      clock.pauseClock()
-      expect(clock.isPaused).toBe(true);
-    });
-  });
-
-  describe('startClock', function() {
-    it('should start the clock', function() {
-      clock.startClock()
-      expect(clock.isPaused).toBe(false)
     });
   });
 });

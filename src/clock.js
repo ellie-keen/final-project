@@ -8,6 +8,7 @@ function Clock(sound, gridView) {
 }
 
 Clock.prototype.interval = function(buttonGrid) {
+  this.isPaused = false;
   var self = this;
   this.intervalID = setInterval(function() {
     for (var i = 0; i < buttonGrid.rows; i++) {
@@ -27,6 +28,7 @@ Clock.prototype.interval = function(buttonGrid) {
 };
 
 Clock.prototype.clear = function() {
+  this.isPaused = true;
   clearInterval(this.intervalID);
 };
 
@@ -47,13 +49,3 @@ Clock.prototype.decrementIntervalDuration = function() {
 Clock.prototype._play = function(button) {
   button.isOn ? this.sound.playSound(button.row) : null;
 };
-
-Clock.prototype.pauseClock = function() {
-  this.clear();
-  this.isPaused = true;
-};
-
-Clock.prototype.startClock = function(buttonGrid) {
-  this.interval(buttonGrid);
-  this.isPaused = false;
-}
