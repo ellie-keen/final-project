@@ -2,6 +2,7 @@ function Clock(sound, gridView) {
   this.sound = sound;
   this.gridView = gridView;
   this.step = 0;
+  this.isPaused = false;
   this.bpm = 120;
   this.intervalDuration = (60000 / this.bpm);
 }
@@ -46,3 +47,13 @@ Clock.prototype.decrementIntervalDuration = function() {
 Clock.prototype._play = function(button) {
   button.isOn ? this.sound.playSound(button.row) : null;
 };
+
+Clock.prototype.pauseClock = function() {
+  this.clear();
+  this.isPaused = true;
+};
+
+Clock.prototype.startClock = function(buttonGrid) {
+  this.interval(buttonGrid);
+  this.isPaused = false;
+}
