@@ -7,26 +7,29 @@
     <title></title>
   </head>
   <body>
-    <canvas id="visualiserCanvas" width="800" height="600" class="background"></canvas>
-    <canvas id="keyboardCanvas" width="800" height="600" class="foreground"></canvas>
+    <div class="container">
+      <div id="music-info-container">
+        <div class="music-spacing">BPM: <span id="bpm"></span></div>
+        <div class="music-spacing">Key: <span id="key"></span></div>
+        <div class="music-spacing">Wave Type: <span id="waveType"></span></div>
+      </div>
 
-    <div class="instructions">
-      <i class="fa fa-question-circle" style="font-size:30px"></i>
-      <span class="instructions-text">
-        <p>Space Bar - Change Wave Type</p>
-        <p>K - Change Key</p>
-        <p>P - Pause/Play</p>
-        <p>Arrow Up - Increase Speed</p>
-        <p>Arrow Down - Decrease Speed</p>
-        <p>R - Reset Grid</p>
-      </span>
+      <canvas id="visualiserCanvas" width="710" height="400"></canvas>
+      <canvas id="keyboardCanvas" width="710" height="350"></canvas>
+
+      <div class="instructions">
+        <i class="fa fa-question-circle" style="font-size:30px"></i>
+        <div class="instructions-text">
+          <p><strong>Space Bar</strong> - Change Wave Type</p>
+          <p><strong>K</strong> - Change Key</p>
+          <p><strong>P</strong> - Pause/Play</p>
+          <p><strong>Arrow Up</strong> - Increase Speed</p>
+          <p><strong>Arrow Down</strong> - Decrease Speed</p>
+          <p><strong>R</strong> - Reset Grid</p>
+        </div>
+      </div>
     </div>
 
-    <div id="music-info">
-      <div class="music-spacing">BPM: <span id="bpm"></span></div>
-      <div class="music-spacing">Key: <span id="key"></span></div>
-      <div class="music-spacing">Wave Type: <span id="waveType"></span></div>
-    </div>
 
     <script type="text/javascript" src="src/sound.js"></script>
     <script type="text/javascript" src="src/visualiserCanvas.js"></script>
