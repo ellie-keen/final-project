@@ -1,14 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-style: Verdana, sans-serif;
+}
+
 body {
   background-color: #03193e;
   overflow: hidden;
 }
 
-canvas {
+.container {
+  background-color: #052863;
+  max-width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+#music-info-container {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-bottom: 35px;
+  margin-right: 30px;
+  font-size: 15px;
+  font-family: verdana;
+}
+
+.music-spacing {
+  margin-right: 20px;
+}
+
+#visualiserCanvas {
+  margin-top: 20px;
+  z-index: -1;
+  margin-left: -40%;
+  transform: rotate(90deg);
   position: absolute;
 }
 
-p {
-  margin: 1px;
+#keyboardCanvas {
+  display: block;
+  width: 710px;
 }
 
 .fa-question-circle {
@@ -18,70 +54,27 @@ p {
 .instructions .instructions-text {
   visibility: hidden;
   background-color: white;
-}
-
-.container {
-  margin-top: 50px;
-  max-width: 800px;
-}
-
-.music-spacing {
-  margin-right: 10px;
-}
-
-#music-info {
-  color: white;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 30px;
-  font-size: 15px;
-  font-family: verdana;
-}
-
-#visualiserCanvas {
-  z-index: 1;
-  position: absolute;
-}
-
-.instructions-text {
-  font-style: verdana;
-  color: black;
-  width: 100%;
-  position: absolute;
-  bottom: 40px;
-  right: 120px;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 1.5;
 }
 
 .instructions {
   color: white;
   width: 20%;
-  height: auto;
-  margin-left: 40%;
   position: absolute;
-  bottom: 10px;
-  right: -100px;
+  bottom: 50px;
+  right: -110px;
+}
+
+.instructions-text {
+  color: black;
+  width: 90%;
+  position: absolute;
+  bottom: 40px;
+  right: 120px;
 }
 
 .instructions:hover .instructions-text {
   visibility: visible;
-}
-
-#visualiserCanvas {
-  z-index: 2;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: -250px;
-  transform: rotate(90deg);
-  margin-top: 15%;
-}
-
-#keyboardCanvas {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 22%;
-  margin-right: 22%;
-  margin-top: 15%;
-  display: block;
-  width: 800px;
-  z-index: 3;
 }

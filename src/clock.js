@@ -4,24 +4,27 @@ function Clock(sound, gridView) {
   this.step = 0;
   this.isPaused = false;
   this.bpm = 120;
-  this.intervalDuration = (60000 / this.bpm);
+  this.intervalDuration = 60000 / this.bpm;
 }
 
 Clock.prototype.interval = function(buttonGrid) {
-  this.isPaused = false;
   var self = this;
+  this.isPaused = false;
   this.intervalID = setInterval(function() {
     for (var i = 0; i < buttonGrid.rows; i++) {
-      var b = buttonGrid.buttons[i][self.step];
-      b.color = b.isOn ? '#D22F2D' : '#3a5fe5';
+      if (buttonGrid.buttonIsOn(i, self.step)) {
+        buttonGrid.setButtonColor(i, self.step, '#D22F2D');
+      } else if (!buttonGrid.buttonIsOn(i, self.step)) {
+        buttonGrid.setButtonColor(i, self.step, '#3a5fe5');
+      }
       self.gridView.drawGrid(buttonGrid);
     }
 
     self.step === buttonGrid.cols - 1 ? (self.step = 0) : self.step++;
+
     for (var i = 0; i < buttonGrid.rows; i++) {
-      var button = buttonGrid.buttons[i][self.step];
-      self._play(buttonGrid.buttons[i][self.step]);
-      button.color = 'green';
+      buttonGrid.buttonIsOn(i, self.step) ? self._play(i) : null;
+      buttonGrid.setButtonColor(i, self.step, '#056340');
       self.gridView.drawGrid(buttonGrid);
     }
   }, this.intervalDuration);
@@ -35,17 +38,17 @@ Clock.prototype.clear = function() {
 Clock.prototype.incrementIntervalDuration = function() {
   if (this.bpm > 50) {
     this.bpm -= 5;
-    this.intervalDuration = (60000 / this.bpm);
+    this.intervalDuration = 60000 / this.bpm;
   }
 };
 
 Clock.prototype.decrementIntervalDuration = function() {
   if (this.bpm < 300) {
     this.bpm += 5;
-    this.intervalDuration = (60000 / this.bpm);
+    this.intervalDuration = 60000 / this.bpm;
   }
 };
 
-Clock.prototype._play = function(button) {
-  button.isOn ? this.sound.playSound(button.row) : null;
+Clock.prototype._play = function(row) {
+  this.sound.playSound(row);
 };
