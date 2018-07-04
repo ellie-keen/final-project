@@ -8,10 +8,10 @@ function Clock(sound, gridView) {
 }
 
 Clock.prototype.interval = function(buttonGrid) {
-  var self = this;
+  const self = this;
   this.isPaused = false;
   this.intervalID = setInterval(function() {
-    for (var i = 0; i < buttonGrid.rows; i++) {
+    for (let i = 0; i < buttonGrid.rows; i++) {
       if (buttonGrid.buttonIsOn(i, self.step)) {
         buttonGrid.setButtonColor(i, self.step, '#D22F2D');
       } else if (!buttonGrid.buttonIsOn(i, self.step)) {
@@ -22,9 +22,9 @@ Clock.prototype.interval = function(buttonGrid) {
 
     self.step === buttonGrid.cols - 1 ? (self.step = 0) : self.step++;
 
-    for (var i = 0; i < buttonGrid.rows; i++) {
-      buttonGrid.buttonIsOn(i, self.step) ? self._play(i) : null;
-      buttonGrid.setButtonColor(i, self.step, '#056340');
+    for (let row = 0; row < buttonGrid.rows; row++) {
+      buttonGrid.buttonIsOn(row, self.step) ? self._play(row) : null;
+      buttonGrid.setButtonColor(row, self.step, '#056340');
       self.gridView.drawGrid(buttonGrid);
     }
   }, this.intervalDuration);

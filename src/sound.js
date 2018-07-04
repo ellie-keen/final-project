@@ -14,16 +14,16 @@ Sound.prototype.playSound = function(row) {
 Sound.prototype.changeWaveType = function() {
   this.counter === this.waveTypes.length - 1 ? this.counter = 0 : this.counter++;
   this.waveType = this.waveTypes[this.counter];
-}
+};
 
 Sound.prototype._note = function(frequency) {
-  var duration = 2;
-  var wave = this._createWave(duration);
-  if (frequency == 3) {
+  const duration = 2;
+  const wave = this._createWave(duration);
+  if (frequency === 3) {
     this._rampDown(wave.frequency, 200, duration)
   } else {
     wave.frequency.value = frequency;
- }
+  }
   this._chain([
     wave,
     this._createAmplifier(0.2, duration),
@@ -33,7 +33,7 @@ Sound.prototype._note = function(frequency) {
 };
 
 Sound.prototype._createWave = function(duration) {
-  var oscillator = this.audio.createOscillator();
+  const oscillator = this.audio.createOscillator();
   oscillator.type = this.waveType;
   oscillator.start(this.audio.currentTime);
   oscillator.stop(this.audio.currentTime + duration);
@@ -41,7 +41,7 @@ Sound.prototype._createWave = function(duration) {
 };
 
 Sound.prototype._createAmplifier = function(startValue, duration) {
-  var amplifier = this.audio.createGain();
+  const amplifier = this.audio.createGain();
   this._rampDown(amplifier.gain, startValue, duration);
   return amplifier;
 };
@@ -52,7 +52,7 @@ Sound.prototype._rampDown = function(value, startValue, duration) {
 };
 
 Sound.prototype._chain = function(sounds) {
-  for (var i = 0; i < sounds.length - 1; i++) {
+  for (let i = 0; i < sounds.length - 1; i++) {
     sounds[i].connect(sounds[i + 1]);
   }
 };

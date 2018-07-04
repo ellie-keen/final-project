@@ -1,10 +1,10 @@
 describe('Key', function() {
-  var key;
-  var a;
-  var b;
-  var c;
-  var d;
-  var f;
+  let key;
+  let a;
+  let b;
+  let c;
+  let d;
+  let f;
 
   beforeEach(function() {
     key = new Key();

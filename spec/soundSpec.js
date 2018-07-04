@@ -1,7 +1,7 @@
 describe('Sound', function() {
-  var audio = new AudioContext();
-  var analyser = audio.createAnalyser();
-  var sound;
+  let audio = new AudioContext();
+  let analyser = audio.createAnalyser();
+  let sound;
 
   beforeEach(function() {
     sound = new Sound(audio, analyser);

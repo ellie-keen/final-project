@@ -1,5 +1,5 @@
 describe('Clock', function() {
-  var clock;
+  let clock;
 
   beforeEach(function() {
     clock = new Clock();
