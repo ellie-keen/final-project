@@ -1,10 +1,13 @@
-describe('Synthesiser', function() {
+describe('Homepage', function() {
+
   beforeEach(() => {
-    cy.visit('https://stranger-synths.herokuapp.com/', function() {
+    cy.visit('./index.html')
   });
 
-  it('changes the waveType when pressing space bar', function() {
-    .type('w')
-    expect('#waveType').to.contain('sawtooth');
+  it('Increases BPM by 5 when press up key', function() {
+    cy.get('body')
+    .type('{uparrow}')
+    cy.get('#bpm')
+    .contains('125')
   });
 });
