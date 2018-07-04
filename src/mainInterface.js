@@ -37,7 +37,7 @@ window.onload = function() {
     if (e.keyCode == 75) {
       key.change();
       keyDisplay.innerHTML = key.keyName;
-    } else if (e.keyCode == 32) {
+    } else if (e.keyCode == 87) {
       sound.changeWaveType();
       waveTypeDisplay.innerHTML = sound.waveType;
     } else if (e.keyCode == 38) {
@@ -54,7 +54,7 @@ window.onload = function() {
       buttonGrid.init();
       clock.clear();
       clock.interval(buttonGrid);
-    } else if (e.keyCode == 80) {
+    } else if (e.keyCode == 32) {
       clock.isPaused == false ? clock.clear() : clock.interval(buttonGrid);
     }
   };
