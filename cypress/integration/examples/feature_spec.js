@@ -10,4 +10,11 @@ describe('Homepage', function() {
     cy.get('#bpm')
     .contains('125')
   });
+
+  it('Decreases BPM by 5 when press down key', function() {
+    cy.get('body')
+    .type('{downarrow}')
+    cy.get('#bpm')
+    .contains('115')
+  });
 });
