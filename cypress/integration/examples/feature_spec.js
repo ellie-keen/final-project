@@ -17,4 +17,11 @@ describe('Homepage', function() {
     cy.get('#bpm')
     .contains('115')
   });
+
+  it('Changes the key when K is pressed', function() {
+    cy.get('body')
+    .type('k')
+    cy.get('#key')
+    .contains('Bb Aeolian')
+  })
 });
