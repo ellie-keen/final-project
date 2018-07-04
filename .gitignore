@@ -6,3 +6,6 @@ coverage
 
 # Generated from iOS
 .DS_Store
+
+# Remove mp4 files generated from Cypress Tests
+cypress/videos
