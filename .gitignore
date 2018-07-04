@@ -8,4 +8,4 @@ coverage
 .DS_Store
 
 # Remove mp4 files generated from Cypress Tests
-cypress/videos
+cypress/videos/examples/feature_spec.js.mp4

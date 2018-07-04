@@ -9,6 +9,7 @@
   "scripts": {
     "unit-test": "open SpecRunner.html",
     "feature-test": "./node_modules/cypress/bin/cypress run --spec cypress/integration/examples/*",
+    "view-feature-test": "npx cypress open",
     "istanbul": "node ./node_modules/.bin/istanbul cover src/*",
     "eslint": "./node_modules/.bin/eslint src/*",
     "start": "node index.js"
