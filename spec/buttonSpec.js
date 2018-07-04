@@ -1,17 +1,12 @@
 describe('Button', function() {
-
   var button;
 
   beforeEach(function() {
-    button = new Button(1);
+    button = new Button();
   });
 
   it('has a color', function() {
     expect(button.color).toEqual('#3a5fe5');
-  });
-
-  it('has a row', function() {
-    expect(button.row).toEqual(1);
   });
 
   it('is off when initialized', function() {
@@ -29,7 +24,7 @@ describe('Button', function() {
     expect(button.isOn).toEqual(false);
   });
 
-  it('changes to red when turned on', function(){
+  it('changes to red when turned on', function() {
     button.toggle();
     expect(button.color).toEqual('#D22F2D');
   });

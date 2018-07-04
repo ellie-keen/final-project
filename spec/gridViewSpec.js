@@ -3,7 +3,7 @@ describe('GridView', function() {
   var gridWidth = 16;
   var gridHeight = 8;
   var key = new Key();
-  var buttonGrid = new ButtonGrid(gridHeight, gridWidth, key);
+  var buttonGrid = new ButtonGrid(gridHeight, gridWidth);
   buttonGrid.init();
   var gridView = new GridView(context);
 

@@ -1,5 +1,4 @@
-function Button(row) {
-  this.row = row;
+function Button() {
   this.buttonColorInactive = '#3a5fe5';
   this.buttonColorActive = '#D22F2D';
   this.color = this.buttonColorInactive;
