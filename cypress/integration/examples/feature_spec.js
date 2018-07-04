@@ -24,4 +24,11 @@ describe('Homepage', function() {
     cy.get('#key')
     .contains('Bb Aeolian')
   })
+
+  it('Changes Wavetype when Spacebar is pressed', function() {
+    cy.get('body')
+    .type(' ')
+    cy.get('#waveType')
+    .contains('sawtooth')
+  })
 });
