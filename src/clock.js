@@ -24,7 +24,7 @@ Clock.prototype.interval = function(buttonGrid) {
 
     for (var i = 0; i < buttonGrid.rows; i++) {
       buttonGrid.buttonIsOn(i, self.step) ? self._play(i) : null;
-      buttonGrid.setButtonColor(i, self.step, '#056340');
+      buttonGrid.setButtonColor(i, self.step, '#1a9988ff');
       self.gridView.drawGrid(buttonGrid);
     }
   }, this.intervalDuration);
