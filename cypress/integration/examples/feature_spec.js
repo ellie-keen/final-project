@@ -31,4 +31,14 @@ describe('Homepage', function() {
     cy.get('#waveType')
     .contains('sawtooth')
   })
+
+  it('Shows instruction box', function() {
+    cy.get('.instructions').contains('Space Bar - Change Wave Type')
+    cy.get('.instructions').contains('Space Bar - Change Wave Type')
+    cy.get('.instructions').contains('K - Change Key')
+    cy.get('.instructions').contains('P - Pause/Play')
+    cy.get('.instructions').contains('Arrow Up - Increase Speed')
+    cy.get('.instructions').contains('Arrow Down - Decrease Speed')
+    cy.get('.instructions').contains('R - Reset Grid')
+  });
 });
