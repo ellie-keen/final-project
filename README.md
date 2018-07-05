@@ -75,4 +75,4 @@ I would like to erase what I have selected.
 
 #### Contributors
 
-[Asia Antczak](https://github.com/asiaantczak) | [Mark Channer](https://github.com/MarkChanner/final-project) | [Ellie Keen](https://github.com/ellie-keen) | [Anders Persson]([https://github.com/anderscodes)
+[Asia Antczak](https://github.com/asiaantczak) | [Mark Channer](https://github.com/MarkChanner/final-project) | [Ellie Keen](https://github.com/ellie-keen) | [Anders Persson](https://github.com/anderscodes)
