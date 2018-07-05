@@ -1,30 +1,56 @@
-# final-project
+# Beloved Machine
 
-How to run Istanbul test coverage:
-`npm run istanbul`
+A front-end application JavaScript application that runs in the browser. Our application is aimed at musicians and non-musicians alike, to play and interact with sound. We wanted learning with music to be more accessible and fun. 
 
-How to run Jasmine unit tests:
+Visit our application NAME-OF-APPLICATION [here](https://stranger-synths.herokuapp.com/)
+
+## Installation
+
+In your terminal, run
+
+```
+git clone https://github.com/MarkChanner/final-project.git
+cd NAME-OF-PROJECT
+npm install
+```
+
+To run the application
+`npm run start`
+
+To run unit tests using Jasmine
+
 `npm run unit-test`
 
-How to run Cypress feature tests:
+To run feature-tests using Cypress
+
 `npm run feature-test`
 
-How to run ESLint:
-`npm run eslint`
+```
+![Alt text](https://github.com/ellie-keen/bank-tech-test/blob/master/public/rspec.png "rspec")
+```
 
-How to open the application:
-`npm run start`
+## Technologies
+
+* JavaScript
+
+* Jasmine
+* Cypress
+* Express
+* HTML/CSS
+* GitHub for...
+* Trello for...
+* Heroku for...
 
 #### User Stories
 
 ```
 As a user,
-So that I can step through my program,
-I would like to have a clock.
+So I can play a sound,
+I would like to select a sound by clicking a button.
 
 As a user,
-So I can play a sound when a step has reached a column,
-I would like to select a sound by clicking a button.
+So that I can play several sounds sequentially,
+I would like to have a clock that passes over each column.
 
 As a user,
 So I can play multiple sounds at the same time,
@@ -43,6 +69,10 @@ So I can visualise my sound,
 I would like to see some animation based on sound.
 
 As a user,
-So I can build a whole song,
-I would like to be able to play multiple instruments at the same time.
+So I can create a new song without refreshing the page, 
+I would like to erase what I have selected.
 ```
+
+#### Contributors
+
+[Asia Antczak](https://github.com/asiaantczak) | [Mark Channer](https://github.com/MarkChanner/final-project) | [Ellie Keen](https://github.com/ellie-keen) | [Anders Persson]([https://github.com/anderscodes)

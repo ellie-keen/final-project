@@ -22,9 +22,10 @@ Clock.prototype.interval = function(buttonGrid) {
 
     self.step === buttonGrid.cols - 1 ? (self.step = 0) : self.step++;
 
+
     for (let row = 0; row < buttonGrid.rows; row++) {
       buttonGrid.buttonIsOn(row, self.step) ? self._play(row) : null;
-      buttonGrid.setButtonColor(row, self.step, '#056340');
+      buttonGrid.setButtonColor(row, self.step, '#1a9988ff');
       self.gridView.drawGrid(buttonGrid);
     }
   }, this.intervalDuration);
