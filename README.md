@@ -9,8 +9,8 @@ Visit our application [here](https://melody-maker.herokuapp.com/)
 In your terminal, run
 
 ```
-git clone https://github.com/MarkChanner/final-project.git
-cd NAME-OF-PROJECT
+git clone https://github.com/ellie-keen/melody-maker.git
+cd melody-maker
 npm install
 ```
 
