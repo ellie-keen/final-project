@@ -1,27 +1,25 @@
 window.onload = function() {
-  var keyboardCanvas = document.getElementById('keyboardCanvas');
-  var visualiserCanvas = document.getElementById('visualiserCanvas');
-  var bpm = document.getElementById('bpm');
-  var keyDisplay = document.getElementById('key');
-  var waveTypeDisplay = document.getElementById('waveType');
-  var keyboardContext = keyboardCanvas.getContext('2d');
-  var key = new Key();
+  const keyboardCanvas = document.getElementById('keyboardCanvas');
+  const visualiserCanvas = document.getElementById('visualiserCanvas');
+  const bpm = document.getElementById('bpm');
+  const keyDisplay = document.getElementById('key');
+  const waveTypeDisplay = document.getElementById('waveType');
+  const keyboardContext = keyboardCanvas.getContext('2d');
 
-  var rows = 8;
-  var cols = 16;
-  var buttonGrid = new ButtonGrid(rows, cols);
-  var gridView = new GridView(keyboardContext);
-
-  var audio = new AudioContext();
-  var analyser = audio.createAnalyser();
-  var sound = new Sound(audio, analyser, key);
-  var clock = new Clock(sound, gridView);
+  const rows = 8;
+  const cols = 16;
+  const buttonGrid = new ButtonGrid(rows, cols);
+  const gridView = new GridView(keyboardContext);
+  const audio = new AudioContext();
+  const analyser = audio.createAnalyser();
+  const key = new Key();
+  const sound = new Sound(audio, analyser, key);
+  const clock = new Clock(sound, gridView);
+  const visualiser = new Visualiser(visualiserCanvas, analyser);
 
   keyDisplay.innerHTML = key.keyName;
   bpm.innerHTML = clock.bpm;
   waveTypeDisplay.innerHTML = sound.waveType;
-
-  var visualiser = new Visualiser(visualiserCanvas, analyser);
 
   buttonGrid.init();
   gridView.drawGrid(buttonGrid);
@@ -34,28 +32,28 @@ window.onload = function() {
   });
 
   document.body.onkeydown = function(e) {
-    if (e.keyCode == 75) {
+    if (e.keyCode === 75) {
       key.change();
       keyDisplay.innerHTML = key.keyName;
-    } else if (e.keyCode == 87) {
+    } else if (e.keyCode === 87) {
       sound.changeWaveType();
       waveTypeDisplay.innerHTML = sound.waveType;
-    } else if (e.keyCode == 38) {
+    } else if (e.keyCode === 38) {
       clock.decrementIntervalDuration();
       bpm.innerHTML = clock.bpm;
       clock.clear();
       clock.interval(buttonGrid);
-    } else if (e.keyCode == 40) {
+    } else if (e.keyCode === 40) {
       clock.incrementIntervalDuration();
       bpm.innerHTML = clock.bpm;
       clock.clear();
       clock.interval(buttonGrid);
-    } else if (e.keyCode == 82) {
+    } else if (e.keyCode === 82) {
       buttonGrid.init();
       clock.clear();
       clock.interval(buttonGrid);
-    } else if (e.keyCode == 32) {
-      clock.isPaused == false ? clock.clear() : clock.interval(buttonGrid);
+    } else if (e.keyCode === 32) {
+      !clock.isPaused ? clock.clear() : clock.interval(buttonGrid);
     }
   };
 };

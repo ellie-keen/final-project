@@ -1,5 +1,5 @@
 describe('Button', function() {
-  var button;
+  let button;
 
   beforeEach(function() {
     button = new Button();

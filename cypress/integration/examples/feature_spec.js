@@ -25,20 +25,19 @@ describe('Homepage', function() {
     .contains('Bb Aeolian')
   })
 
-  it('Changes Wavetype when Spacebar is pressed', function() {
+  it('Changes Wavetype when W is pressed', function() {
     cy.get('body')
-    .type(' ')
+    .type('w')
     cy.get('#waveType')
     .contains('sawtooth')
   })
 
   it('Shows instruction box', function() {
-    cy.get('.instructions').contains('Space Bar - Change Wave Type')
-    cy.get('.instructions').contains('Space Bar - Change Wave Type')
+    cy.get('.instructions').contains('W - Change Wave Type')
     cy.get('.instructions').contains('K - Change Key')
-    cy.get('.instructions').contains('P - Pause/Play')
-    cy.get('.instructions').contains('Arrow Up - Increase Speed')
-    cy.get('.instructions').contains('Arrow Down - Decrease Speed')
-    cy.get('.instructions').contains('R - Reset Grid')
+    cy.get('.instructions').contains('Space Bar - Pause/Play')
+    cy.get('.instructions').contains('Arrow Up - Increase BPM')
+    cy.get('.instructions').contains('Arrow Down - Decrease BPM')
+    cy.get('.instructions').contains('R - Reset Buttons')
   });
 });

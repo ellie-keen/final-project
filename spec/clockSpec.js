@@ -1,7 +1,7 @@
 describe('Clock', function() {
-  var clock;
-  var soundSpy = jasmine.createSpyObj('soundSpy', ['playSound']);
-  var gridViewSpy = jasmine.createSpyObj('gridView', ['drawGrid', 'update']);
+  let clock;
+  let soundSpy = jasmine.createSpyObj('soundSpy', ['playSound']);
+  let gridViewSpy = jasmine.createSpyObj('gridView', ['drawGrid', 'update']);
 
   beforeEach(function() {
     clock = new Clock(soundSpy, gridViewSpy);
