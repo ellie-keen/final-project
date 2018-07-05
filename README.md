@@ -4,7 +4,7 @@ A front-end application JavaScript application that runs in the browser. Our app
 
 Visit our application NAME-OF-APPLICATION [here](https://stranger-synths.herokuapp.com/)
 
-##Installation
+## Installation
 
 In your terminal, run
 
