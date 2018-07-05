@@ -20,8 +20,8 @@ GridView.prototype.drawGrid = function(buttonGrid) {
 
 GridView.prototype.update = function(buttonGrid, x, y) {
   if (this._clickIsWithinButton(buttonGrid, x, y)) {
-    var row = Math.floor(y / this.buttonSize / this.gap);
-    var col = Math.floor(x / this.buttonSize / this.gap);
+    const row = Math.floor(y / this.buttonSize / this.gap);
+    const col = Math.floor(x / this.buttonSize / this.gap);
     buttonGrid.toggleButton(row, col);
   }
 };
@@ -29,8 +29,8 @@ GridView.prototype.update = function(buttonGrid, x, y) {
 GridView.prototype._clickIsWithinButton = function(buttonGrid, x, y) {
   for (let col = 0; col < buttonGrid.cols; col++) {
     for (let row = 0; row < buttonGrid.rows; row++) {
-      let buttonX = col * this.buttonSize * this.gap;
-      let buttonY = row * this.buttonSize * this.gap;
+      const buttonX = col * this.buttonSize * this.gap;
+      const buttonY = row * this.buttonSize * this.gap;
       if (
         x >= buttonX &&
         x <= buttonX + this.buttonSize &&

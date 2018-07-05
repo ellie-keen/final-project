@@ -1,7 +1,7 @@
 describe('ButtonGrid', function() {
-  var buttonGrid;
-  var rows = 8;
-  var cols = 16;
+  let buttonGrid;
+  const rows = 8;
+  const cols = 16;
 
   beforeEach(function() {
     buttonGrid = new ButtonGrid(rows, cols);
