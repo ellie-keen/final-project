@@ -1,8 +1,8 @@
-# Beloved Machine
+# Melody Maker
 
-A front-end application JavaScript application that runs in the browser. Our application is aimed at musicians and non-musicians alike, to play and interact with sound. We wanted learning with music to be more accessible and fun. 
+A front-end JavaScript application that runs in the browser. Our application is aimed at musicians and non-musicians alike, to play and interact with sound. We wanted learning with music to be more accessible and fun. 
 
-Visit our application NAME-OF-APPLICATION [here](https://stranger-synths.herokuapp.com/)
+Visit our application [here](https://melody-maker.herokuapp.com/)
 
 ## Installation
 
@@ -32,14 +32,12 @@ To run feature-tests using Cypress
 ## Technologies
 
 * JavaScript
-
+* Node.js
 * Jasmine
 * Cypress
 * Express
 * HTML/CSS
-* GitHub for...
-* Trello for...
-* Heroku for...
+* Heroku for hosting
 
 #### User Stories
 
