@@ -25,10 +25,6 @@ To run feature-tests using Cypress
 
 `npm run feature-test`
 
-```
-![Alt text](https://github.com/ellie-keen/bank-tech-test/blob/master/public/rspec.png "rspec")
-```
-
 ## Technologies
 
 * JavaScript
